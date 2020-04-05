@@ -14,8 +14,8 @@ call npm run build:prod
 copy .\deploy\heroku\compose.json .\dist
 copy .\deploy\heroku\index.php .\dist
 
-#若未登入,則要
-# heroku login
+rem #若未登入,則要
+rem # heroku login
 
 cd dist
 git init
@@ -23,7 +23,7 @@ heroku git:remote -a ng-app-20200220
 git add *
 git commit -m "init"
 
-# 若已有上傳過
-# git pull heroku master --allow-unrelated-histories
+rem # 若已有上傳過
+git pull heroku master --allow-unrelated-histories
 git merge master --allow-unrelated-histories
 git push heroku master
